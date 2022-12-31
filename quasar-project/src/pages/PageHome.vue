@@ -7,15 +7,23 @@
         placeholder="What's happening?"
         counter
         maxlength="280"
+        autogrow
       >
           <template v-slot:before>
-            <q-avatar>
-              <img src="https://cdn.quasar.dev/img/avatar5.jpg">
+            <q-avatar size="xl">
+              <img src="https://static.vecteezy.com/system/resources/previews/004/842/371/original/hipster-bear-avatar-vector.jpg">
             </q-avatar>
           </template>
 
           <template v-slot:after>
-            <q-btn round dense flat icon="send" />
+            <q-btn
+              :disable = "!newTweetContent"
+              unelevated
+              rounded
+              color="primary"
+              label="Tweet"
+              no-caps
+            />
           </template>
         </q-input>
     </div>
