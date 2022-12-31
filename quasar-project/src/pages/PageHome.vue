@@ -31,7 +31,10 @@
         <q-separator inset="item"/>
 
       <q-list>
-        <q-item clickable v-ripple>
+        <q-item clickable v-ripple
+          v-for="tweet in tweets"
+          :key="tweet.date"
+          >
           <q-item-section avatar>
             <q-avatar>
               <img src="https://static.vecteezy.com/system/resources/previews/004/842/371/original/hipster-bear-avatar-vector.jpg">
@@ -64,7 +67,21 @@ export default defineComponent({
   name: 'PageHome',
   data() {
     return {
-      newTweetContent: ''
+      newTweetContent: '',
+      tweets: [
+        {
+          content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere exercitationem eligendi ullam excepturi architecto, ea vitae corporis quia ducimus ex quidem inventore quis natus consectetur quas repellendus asperiores quibusdam molestias.",
+          date: Date.now()
+        },
+        {
+          content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere exercitationem eligendi ullam excepturi architecto, ea vitae corporis quia ducimus ex quidem inventore quis natus consectetur quas repellendus asperiores quibusdam molestias.",
+          date: Date.now()
+        },
+        {
+          content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere exercitationem eligendi ullam excepturi architecto, ea vitae corporis quia ducimus ex quidem inventore quis natus consectetur quas repellendus asperiores quibusdam molestias.",
+          date: Date.now()
+        }
+      ]
     }
   }
 })
